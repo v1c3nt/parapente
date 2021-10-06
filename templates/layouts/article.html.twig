@@ -1,0 +1,48 @@
+<div class="products article">
+	<div class="left-article">
+		<div class="prix-wrapper">
+			{% if article.remise %}
+				<div class="old-prix">
+					{{ article.prix|format_currency('EUR', format_width) }}
+				</div>
+				<div class="remise">
+					{{ article.remise }}
+				</div>
+				<div class="new-prix">
+					{{ article.prix - ((article.prix * article.remise) / 100) }}
+				</div>
+			{% else %}
+				<div class="prix">
+					{{ article.prix|format_currency('EUR', {fraction_digit:0}) }}
+				</div>
+			{% endif %}
+		</div>
+		<div class="main-image">
+			<img src="./photos/{{ article.mainPicture.url }}" alt="{{ article.mainPicture.alt }}">
+		</div>
+
+	</div>
+	<div class="right-article">
+		<h4 class="titre">
+			{{ article.titre }}
+		</h4>
+
+		<div class="article-body">
+			<div class="description">
+				description:
+				<p>
+					{{article.description|striptags| u.truncate(100, '...')}}
+				</p>
+			</div>
+			<hr>
+		</div>
+		<div class="basket-action">
+			<a href="{{ path('remove_article', {'article':article.id}) }}">
+				<i class="fas fa-minus-square"></i>
+			</a>
+			<a href="{{ path('add_article', {'article':article.id}) }}">
+				<i class="fas fa-plus-square"></i>
+			</a><br>
+		</div>
+	</div>
+</div>

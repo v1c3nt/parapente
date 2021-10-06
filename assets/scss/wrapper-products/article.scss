@@ -1,0 +1,81 @@
+
+.article {
+    border: 5px $color4 solid;
+    width: 40%;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    display: flex;
+    margin-left: 50px;
+    background-color: $color4;
+}
+
+.left-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.right-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1rem;
+    width: 60%;
+}
+
+.basket-action {
+    padding: 0.5rem;
+    align-self: flex-end;
+}
+
+.main-image {
+    -moz-box-shadow:    2px 3px 7px 2px #2C2C2C;
+    -webkit-box-shadow: 2px 3px 7px 2px #2C2C2C;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow:         2px 3px 7px 2px #2C2C2C;
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 130%;
+    &>img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.main-image:before {
+	content: "";
+	float: left;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+.article-body {
+    padding: 1rem 0.5rem;
+}
+
+.description  p{
+    margin-left: 1rem;
+}
+
+.prix-wrapper {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.composition > .pierre:not(:last-child) {
+    border-bottom: 2px solid $color1;
+}
+
+.basket-action {
+    font-size: 3rem;
+    display: flex;
+    flex-wrap: nowrap;
+
+    &>a {
+        margin: 0.25rem 0.5rem;
+    }
+}

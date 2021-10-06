@@ -1,0 +1,71 @@
+{# {% extends "bundles/EasyAdminBundle/layout.html.twig" %} #}
+{% extends '@!EasyAdmin/layout.html.twig' %}
+{% block main %}
+	<h1 class="text-center">Quelleques explications 😀</h1>
+	<p class="text-center"></p>
+	<section class="card-deck">
+		<div class="card border border-primary">
+			<div class="card-header">
+            <i class="fas fa-hand-spock"></i>
+				Prise en main
+			</div>
+			<div class="card-body">
+				<p>
+                    à tout moment vous pouvez cliquer sur la séparation entre le cadre principal et la colonne d'icone pour la développer.
+                    <br>
+                    <div class="menu-img-contener"><img src="{{ asset('build/images/open.png') }}" alt="menu ouvert"><span class="vertical-separator"></span><img src="{{ asset('build/images/close.png') }}" width="45%" alt="menu fermé"></div>
+                </p>
+			</div>
+		</div>
+	</section>
+	<section class="card-deck">
+		<div class="card border border-primary">
+			<div class="card-header">
+				<i class="fa fa-camera-retro fs-2"></i>
+				les photos</div>
+			<div class="card-body">
+				<p>
+					Attention le nom du fichier que vous important
+					<strong>c'est lui qui apparaitra dans les listes pour le choix des photos</strong>
+				</p>
+				<p>
+					les photos vous pouvez utiliser les formats classique .png .jpg et .jpeg .
+				</p>
+				<p>
+					il n'y a pas de dimension mais attention que les images ne soient pas trop lourdes.
+				</p>
+				<p>
+					il est important de bien utiliser le Alt, il permet aux personnes malvoyantes et au robot de référencement de se faire une idée.
+				</p>
+			</div>
+			<div class="card-footer"></div>
+		</div>
+		<div class="card border border-primary">
+			<div class="card-header">
+				<i class="fa fa-key fs-2"></i>
+				les articles</div>
+			<div class="card-body">
+				<p>Ils doivent avoir au moins un titre et une description.
+					<br>Le titre apparait en haut de chaque article (dans le "catalogue comme d'un le détail).
+					<br>
+					Seul les 100 premiers caratères apparaissent dans le catalogue mais toutes la description apparait dans le détail.
+				</p>
+				<p>
+					la photo de présentation
+				</p>
+			</div>
+			<div class="card-footer"></div>
+		</div>
+		<div class="card border border-primary">
+			<div class="card-header">
+				<i class="fa fa-money fs-2"></i>
+				les commandes</div>
+			<div class="card-body">
+				<p>
+					cette section vous permettra de gérer les commandes en fonction de leurs différents états.
+				</p>
+			</div>
+			<div class="card-footer"></div>
+		</div>
+	</section>
+{% endblock %}

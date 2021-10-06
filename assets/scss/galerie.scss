@@ -1,0 +1,42 @@
+img {
+    max-width: 100%;
+}
+
+#galerie-photos, #firstline, #secondline {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem;
+}
+
+#secondline {
+    flex-wrap: nowrap;
+}
+
+#picture-1 {
+    width: 45%;
+    object-fit: cover;
+    &>img {
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+#double-picture {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#picture-2, #picture-3 {
+    width: 100%;
+}
+
+#picture-4, #picture-5 {
+    width: 49%;
+}

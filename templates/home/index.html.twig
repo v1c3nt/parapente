@@ -1,0 +1,33 @@
+{% extends "layouts/base.html.twig" %}
+{% block main %}
+	<header>
+		{# <div id="header-img"> #}
+			<div id="header-img">
+			{# <img src="{{ asset('build/images/PANO_20210509_122408.jpg')}}" alt="panorama du décollage"  > #}
+			{# <img src="{{ asset('build/images/DSC_0006.5d299931.jpeg')}}" alt="panorama du décollage"  > #}
+			<img src="{{ asset('images/DSC_0009.jpeg')}}" alt="panorama du décollage" id="img-scale" >
+			</div>
+			<div class="up"></div>
+			<div class="start"></div>
+		{# </div> #}
+	</header>
+	<h1 id="title">
+		Le parapente !
+	</h1>
+	<div id="down1"></div>
+	<section id="presentation">
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde iusto cupiditate et consequuntur molestiae, officia consequatur quam rem, obcaecati dolores, voluptas eligendi sequi corporis ducimus architecto inventore temporibus exercitationem assumenda consectetur nesciunt quis sunt tempora ratione! Amet, similique dolorem quibusdam culpa distinctio sapiente dicta aperiam adipisci nam dignissimos ratione dolor dolores, temporibus dolore! Asperiores deserunt omnis provident iste laudantium est nisi aliquam magnam fuga inventore voluptatum, saepe totam labore aliquid neque. Magni architecto sunt, repellendus quasi nulla, voluptate recusandae, quam officiis atque quaerat autem magnam! Molestiae quasi similique quod mollitia? Corrupti dolor aliquam veniam optio eveniet, rerum fugiat necessitatibus iusto, deleniti minus iste, numquam quas eum. Nulla excepturi eos unde eaque temporibus? Maiores ullam, aut, dolore, repellendus numquam et fugit a ad facilis optio eaque?</p>
+	</section>
+	<section class="wrapper-products">
+		{% for article in articles %}
+			{{ include('layouts/article.html.twig', {'article':article}) }}
+		{% endfor %}
+	
+	</section>
+
+	<section id="galerie-photos">
+		{# {% for photo in photos %} #}
+			{{ include ('pages/pictures.html.twig', {'photos': photos}) }}
+		{# {% endfor %} #}
+	</section>
+{% endblock %}

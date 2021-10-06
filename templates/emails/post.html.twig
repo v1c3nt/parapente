@@ -1,0 +1,9 @@
+{% extends "emails/_base.html.twig" %}
+{% block body %}
+    {% if copy is defined %}
+    <div style="background-color:#fa8d8d; border-radius: 5px; padding: 0.25rem 0.5rem;text-align: center;">
+    Vous recevez ce mail car vous avez coché la case recevoir une copie.
+    </div>
+    {% endif %}
+    {{ message|raw }}
+{% endblock %}

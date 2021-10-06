@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html.twig' %}
+{% block main %}
+	<div class="basket-wrapper">
+		{% if basket is not empty %}
+			{% for articles in basket %}
+				{% for article in articles %}
+					<div class="basket-article">
+						<span class="basket-artcile-title">{{ article.article.titre }}</span>
+						<span class="basket-artcile-number">{{ article.number }}
+							<a href="{{ path('remove_article', {'article': article.article.id}) }}">
+								moins</a>
+						</span>
+						<span class="basket-artcile-prix">{{ article.article.prix }} €</span>
+						<span class="basket-article-remise">{{ article.article.remise }}</span>
+						{% set totalArticle = article.article.prix * article.number  %}
+						<span class="basket-article-total">{{totalArticle }} €</span>
+					</div>
+				{% endfor %}
+			{% endfor %}
+			<div class="basket-summary">
+				frais de port = {{ basket.shippingCoast }} €
+				<span class="basket-total-amound">TOTAL
+					{{ basket.totalAmound }}
+					€</span>
+				<span class="basket-total-taxes">dont TVA:{{ basket.taxes }}
+					€</span>
+			</div>
+			<a href="{{ path('order') }}">commander</a>
+		{% else %}
+			Votre panier est vide
+		{% endif %}
+	</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+//-------- COLORS --------
+$color1 : #41463D;
+$color2 :  #F7ECE1;
+$color3 : #1CFEBA;
+$color4 : #45ccf5;
+$color5 : #95F2D9;
+
+//-------- SIZE --------
+$headerH : 100px;
+$headerNav : 55px;
+$footerH : 65px;
+$mainHMini : calc(100vh - #{$headerH} - #{$footerH} - #{$headerNav});
+
+//--------   --------

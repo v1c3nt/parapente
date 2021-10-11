@@ -1,3 +1,4 @@
+
 const { gsap } = require("gsap/dist/gsap");
 const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
 
@@ -47,14 +48,12 @@ gsap
 
   gsap.to(".main-image", {duration: 2.5, ease: "expo", x: -75});
 
-// .to("#header-img" , {css : {position:'fixed', height: '15vh'},
-// scrollTrigger: {
-//     trigger: 'h1',
-//     start: "top 12%",
-//     end: "botton top",
-//     markers: true,
-//     // pin: true,
-//     // scrub:true,
-//     // toogleActions: "none none none none"
-// },
-// })
+gsap.fromTo('h1', { textShadow:"2px 4px 2px #2F2F2F"}
+  ,{
+    duration: 6.5,
+    textShadow:'-2px 4px 2px #2F2F2F ',
+    repeat: -1,
+    yoyo: true,
+    ease: "Back. easeOut.config( 1.7)",
+  }
+);

@@ -37,6 +37,10 @@ class ArticleCrudController extends AbstractCrudController
             IntegerField::new('prix'),
             AssociationField::new('mainPicture', 'photo de présentaion')->hideOnIndex(),
             AssociationField::new('photos')->hideOnIndex(),
+            AssociationField::new('options', 'options')->setFormTypeOptions([
+                'by_reference' => false,
+            ])
+            ,
         ];
     }
 }

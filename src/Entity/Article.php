@@ -62,10 +62,16 @@ class Article
      */
     private $mainPicture;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Option::class, mappedBy="articles")
+     */
+    private $options;
+
     public function __construct()
     {
         $this->photos = new ArrayCollection();
         $this->orders = new ArrayCollection();
+        $this->options = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -185,6 +191,33 @@ class Article
     public function setMainPicture(?Photo $mainPicture): self
     {
         $this->mainPicture = $mainPicture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Option[]
+     */
+    public function getOptions(): Collection
+    {
+        return $this->options;
+    }
+
+    public function addOption(Option $option): self
+    {
+        if (!$this->options->contains($option)) {
+            $this->options[] = $option;
+            $option->addArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOption(Option $option): self
+    {
+        if ($this->options->removeElement($option)) {
+            $option->removeArticle($this);
+        }
 
         return $this;
     }

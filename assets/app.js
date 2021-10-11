@@ -9,12 +9,14 @@ import './scss/app.scss';
 // import './styles/app.css';
 //import greenSock
 import './js/gsap';
+require('@fortawesome/fontawesome-free/css/all.min.css');
+require('@fortawesome/fontawesome-free/js/all.js');
 
-// start the Stimulus application
-// import './bootstrap';
-// $(window).scroll(function() {
-//     var scrollPos =  $(this).scrollTop();
-//     $('#header-img').css({
-//         'background-size' : 100 + scrollPos + '%'
-//     });
-// });
+var app = {
+     init: function () {
+ 
+         console.log('made with 💖 and little 🍺')
+
+         },
+    }
+$(app.init);

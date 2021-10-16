@@ -20,6 +20,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "gsap": "npm:@gsap/member",
+        "htmx.org": "^1.6.0",
         "jquery": "^3.6.0"
     }
 }

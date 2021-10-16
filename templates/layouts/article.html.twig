@@ -44,12 +44,28 @@
 			</ul>
 		</div>
 		<div class="basket-action">
-			<a href="{{ path('remove_article', {'article':article.id}) }}">
+			<span hx-get="/retirer/{{ article.id }}"
+       			hx-trigger="click"
+       			hx-target="#quantity-{{ article.id }}"
+			>
 				<i class="fas fa-minus-square"></i>
-			</a>
-			<a href="{{ path('add_article', {'article':article.id}) }}">
+			</span>
+	
+			<span id="quantity-{{ article.id }}" class="in-basket-number">
+				{% if basket[article.id].number is defined %}
+					{{basket[article.id].number}}
+				{% else %}
+					0
+				{% endif %}
+			</span>
+
+			<span 
+				hx-get="/ajouter/{{ article.id }}"
+       			hx-trigger="click"
+       			hx-target="#quantity-{{ article.id }}"
+			>
 				<i class="fas fa-plus-square"></i>
-			</a><br>
+			</span><br>
 		</div>
 	</div>
 </div>

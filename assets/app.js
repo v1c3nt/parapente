@@ -9,6 +9,7 @@ import './scss/app.scss';
 // import './styles/app.css';
 //import greenSock
 import './js/gsap';
+import 'htmx.org';
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 

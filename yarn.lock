@@ -2552,6 +2552,11 @@ htmlparser2@^6.1.0:
     domutils "^2.5.2"
     entities "^2.0.0"
 
+htmx.org@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/htmx.org/-/htmx.org-1.6.0.tgz#a9f6e8160402208ba3b2ce278498ca136972c167"
+  integrity sha512-/XzLC1QgqdBDIzxGKYN1IbmPHz9QFyId/x+ujJYd4febA99lb1hozyCASNdMHUMTXIqtzBYs2hL2nJfVD/IELQ==
+
 http-deceiver@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/http-deceiver/-/http-deceiver-1.2.7.tgz#fa7168944ab9a519d337cb0bec7284dc3e723d87"

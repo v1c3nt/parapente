@@ -2,13 +2,12 @@
 {% block main %}
 	<header>
 		{# <div id="header-img"> #}
-			<div id="header-img">
+		<div id="header-img">
 			{# <img src="{{ asset('build/images/PANO_20210509_122408.jpg')}}" alt="panorama du décollage"  > #}
 			{# <img src="{{ asset('build/images/DSC_0006.5d299931.jpeg')}}" alt="panorama du décollage"  > #}
-			<img src="{{ asset('images/DSC_0009.jpeg')}}" alt="panorama du décollage" id="img-scale" >
-			</div>
-			<div class="up"></div>
-			<div class="start"></div>
+		<img src="{{ asset('images/DSC_0009.jpeg')}}" alt="panorama du décollage" id="img-scale"> </div>
+		<div class="up"></div>
+		<div class="start"></div>
 		{# </div> #}
 	</header>
 	<h1 id="title">
@@ -22,12 +21,14 @@
 		{% for article in articles %}
 			{{ include('layouts/article.html.twig', {'article':article}) }}
 		{% endfor %}
-	
-	</section>
 
-	<section id="galerie-photos">
+	</section>
+	<div id="test"></div>
+	<section
+		id="galerie-photos">
 		{# {% for photo in photos %} #}
-			{{ include ('pages/pictures.html.twig', {'photos': photos}) }}
+		{{ include ('pages/pictures.html.twig', {'photos': photos}) }}
 		{# {% endfor %} #}
 	</section>
+
 {% endblock %}

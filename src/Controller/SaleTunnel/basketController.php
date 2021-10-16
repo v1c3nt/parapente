@@ -7,6 +7,7 @@ use App\Service\BasketService;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
 
 class basketController extends AbstractController
@@ -24,7 +25,7 @@ class basketController extends AbstractController
     }
 
     /**
-    * @Route("/ajouter/{article}", name="add_article", methods={"GET","POST"})
+    * @Route("/ajouter/{article}", name="add_article", methods={"GET"})
     */
     public function addArticle(Article $article, SessionInterface $session, ArticleRepository $articleRepository)
     {
@@ -39,7 +40,7 @@ class basketController extends AbstractController
         }
         $session->set('basket', $basket);
 
-        return $this->redirectToRoute('all_articles');
+        return new Response($basket[$article->getId()]['number']);
 
     }    
     /**
@@ -51,13 +52,13 @@ class basketController extends AbstractController
             $session->start();
         }
         $basket = $session->get('basket', []);
-        if ( 1 === $basket[$article->getId()]['number'] ) {
-            unset($basket[$article->getId()]);
+        if ( 1 === $basket[$article->getId()]['number'] || 0 === $basket[$article->getId()]['number'] ) {
+            $basket[$article->getId()]['number'] = 0;
         } else {
             $basket[$article->getId()]['number'] = $basket[$article->getId()]['number'] - 1;
         }
         $session->set('basket', $basket);
         //TODO faire en ajax ou différencier redirecction pour le moins du panier
-        return $this->redirectToRoute('all_articles');
+                return new Response($basket[$article->getId()]['number']);
     }
 }

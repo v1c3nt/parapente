@@ -6,3 +6,8 @@
 @import './wrapper-products/index.scss';
 @import './galerie.scss';
 @import './header/media-queries.scss';
+
+.in-basket-number {
+    min-width: 4rem;
+    text-align: center;
+} 

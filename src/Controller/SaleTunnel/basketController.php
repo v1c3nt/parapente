@@ -58,7 +58,7 @@ class basketController extends AbstractController
             $basket[$article->getId()]['number'] = $basket[$article->getId()]['number'] - 1;
         }
         $session->set('basket', $basket);
-        //TODO faire en ajax ou différencier redirecction pour le moins du panier
-                return new Response($basket[$article->getId()]['number']);
+        
+        return new Response($basket[$article->getId()]['number']);
     }
 }

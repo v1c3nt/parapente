@@ -4,10 +4,9 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
 
 gsap.registerPlugin(ScrollTrigger);
 
-// let timeLineHeader = ;
-// gsap.set("#header-img", {xPercent: 0, yPercent: 0}),
 gsap
   .timeline({})
+  /* choix du client pas de zoom 
   .to("#header-img", {
     scale: 3,
     scrollTrigger: {
@@ -32,6 +31,7 @@ gsap
       toogleActions: "none none none none",
     },
   })
+  */
   .to("h1", {
     y: -100,
     scrollTrigger: {

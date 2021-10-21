@@ -6,6 +6,7 @@ use App\Entity\Order;
 use App\Entity\Photo;
 use App\Entity\Article;
 use App\Entity\Option;
+use App\Entity\Text;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -35,6 +36,11 @@ class DashboardController extends AbstractDashboardController
             MenuItem::subMenu("photo", 'fa fa-camera-retro')->setSubItems([
                 MenuItem::linkToCrud('Liste', 'fas fa-list-ol', Photo::class),
                 MenuItem::linkToCrud('Nouveau', 'fas fa-plus', Photo::class)
+                    ->setAction('new')
+            ]),
+            MenuItem::subMenu("texte", 'fa fa-keyboard')->setSubItems([
+                MenuItem::linkToCrud('Liste', 'fas fa-list-ol', Text::class),
+                MenuItem::linkToCrud('Nouveau', 'fas fa-plus', Text::class)
                     ->setAction('new')
             ]),
             MenuItem::subMenu("option", 'fa fa-puzzle-piece')->setSubItems([

@@ -11,11 +11,11 @@
 		{# </div> #}
 	</header>
 	<h1 id="title">
-		Parapente alpe 38
+		{{ texts.title|raw }}
 	</h1>
 	<div id="down1"></div>
 	<section id="presentation">
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde iusto cupiditate et consequuntur molestiae, officia consequatur quam rem, obcaecati dolores, voluptas eligendi sequi corporis ducimus architecto inventore temporibus exercitationem assumenda consectetur nesciunt quis sunt tempora ratione! Amet, similique dolorem quibusdam culpa distinctio sapiente dicta aperiam adipisci nam dignissimos ratione dolor dolores, temporibus dolore! Asperiores deserunt omnis provident iste laudantium est nisi aliquam magnam fuga inventore voluptatum, saepe totam labore aliquid neque. Magni architecto sunt, repellendus quasi nulla, voluptate recusandae, quam officiis atque quaerat autem magnam! Molestiae quasi similique quod mollitia? Corrupti dolor aliquam veniam optio eveniet, rerum fugiat necessitatibus iusto, deleniti minus iste, numquam quas eum. Nulla excepturi eos unde eaque temporibus? Maiores ullam, aut, dolore, repellendus numquam et fugit a ad facilis optio eaque?</p>
+		{{ (texts.presention is defined)? texts.presention|raw:''  }}
 	</section>
 	<section class="wrapper-products">
 		{% for article in articles %}
@@ -24,11 +24,14 @@
 
 	</section>
 	<div id="test"></div>
+		{{ (texts.gallery is defined)? texts.gallery|raw : '' }}
 	<section
 		id="galerie-photos">
-		{# {% for photo in photos %} #}
+		{# {% for photo in photos %} pour l'instant le galerie est statique
+		problème de mise en page dynamique voir en V2
+		 #}
 		{{ include ('pages/pictures.html.twig', {'photos': photos}) }}
 		{# {% endfor %} #}
 	</section>
-
+{{ (texts.footer is defined)? texts.footer|raw :'' }}
 {% endblock %}
